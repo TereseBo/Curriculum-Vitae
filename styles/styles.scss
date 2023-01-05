@@ -2,7 +2,7 @@
 @use '_mixins' as m;
 @use '_basic' as b;
 
-#mainNav {
+.mainNav {
     @include m.nav;
 }
 

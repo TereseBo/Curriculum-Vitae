@@ -16,7 +16,7 @@ h2, h3, h4, h5, h6 {
   font-weight: lighter;
 }
 
-#mainNav ul {
+.mainNav ul {
   list-style: none;
   padding: 0;
   display: flex;
@@ -25,21 +25,21 @@ h2, h3, h4, h5, h6 {
   gap: 1rem;
   margin: auto;
 }
-#mainNav li {
+.mainNav li {
   padding: 1rem;
   background: rgb(122, 121, 130);
   border-radius: 10px;
 }
-#mainNav li:hover {
+.mainNav li:hover {
   background-color: rgb(48, 48, 68);
   transform: scale(1.2);
   transition: 0.5s;
 }
-#mainNav li:hover a {
+.mainNav li:hover a {
   color: rgb(150, 150, 180);
   font-weight: 700;
 }
-#mainNav li a {
+.mainNav li a {
   text-decoration: none;
   color: rgb(72, 72, 92);
 }
