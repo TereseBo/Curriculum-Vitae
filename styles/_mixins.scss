@@ -4,13 +4,6 @@
     border-radius: $radius;
 }
 
-
-
-@mixin flip{
-
-
-}
-
 @mixin nav{
     ul{
         list-style: none;
@@ -23,25 +16,52 @@
     }
     & li{
         padding: 1rem;
-        background: v.$secondary-bg-color;
+        background: v.$secondarycolor;
         @include rounded-corners;
 
         &:hover{
             //color: v.$quinary-text-color;
-            background-color: v.$quaternary-bg-color;
+            background-color: v.$quaternarycolor;
             transform: scale(1.2);
             transition: 0.5s;
             & a{
-                color: v.$quinary-text-color;
+                color: v.$quinarycolor;
                 font-weight: 700;
             }
         }
         
         & a{
             text-decoration: none;
-            color: v.$tertiary-text-color;
+            color: v.$tertiarycolor;
         }
 
     }
+
+}
+@mixin link{
+    a{
+    color: v.$quinarycolor;
+    text-decoration: none;
+    &:hover{
+        @include fancy-text;
+        font-weight: bolder;
+    }
+}
+
+}
+
+@mixin fancy-text{
+    text-shadow: 0 0 0.5rem v.$accentcolor1;
+
+}
+
+@mixin dark-text{
+    color: v.$secondarycolor;
+    text-shadow: 0rem 0rem 1rem 
+    v.$accentcolor2, 
+    0px 0px 16px v.$accentcolor2,
+    0px 0px 16px v.$accentcolor2,
+    0px 0px 16px v.$accentcolor2,
+    0px 0px 16px v.$accentcolor2;
 
 }
