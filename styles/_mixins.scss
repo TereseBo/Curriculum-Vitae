@@ -9,9 +9,10 @@
         list-style: none;
         padding: 0;
         display: flex;
+        margin: v.$smallspace;
         justify-content: space-around;
         align-items: center;
-        gap: 1rem;
+        gap: v.$smallspace;
         margin: auto;
     }
     & li{
@@ -51,7 +52,7 @@
 }
 
 @mixin fancy-text{
-    text-shadow: 0 0 0.5rem v.$accentcolor1;
+    text-shadow: 1px 1px v.$secondarycolor, 0 0 1rem v.$accentcolor1;
 
 }
 

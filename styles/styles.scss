@@ -4,115 +4,180 @@
 .mainNav {
     @include m.nav;
 }
-body{
-    text-align: center;
-    h2{
-        font-weight: 700;
-        margin-left: 0.5rem;
-        margin-right: 0.5rem;
 
-    }
+body {
+    margin-top: v.$largespace;
+    margin-bottom: v.$largespace;
+    text-align: center;
     background: v.$primarycolor;
     color: v.$tertiarycolor;
     font-size: medium;
     box-sizing: border-box;
     display:flex;
     flex-direction: column;
-       align-items: center;
+    align-items: center;
 
-       
+    header{
+        display: flex;
+        flex-direction: column;
+        gap: v.$smallspace;
+        h1,h2,h3,h4,h5{
+            margin:0;
+            @include m.fancy-text;
+        }
+    }
+    h2 {
+        font-weight: 700;
+        margin-left: 0.5rem;
+        margin-right: 0.5rem;
+        margin-top: 0;
+
+    }
+
+
+
+    .section-header {
+        text-align: left;
+        margin: auto;
+        width: v.$basewidth;
+
+        h2 {
+
+            @include m.fancy-text;
+
+            // background-color: aqua;
+        }
+
+    }
+
+    main {
+
+        .card-section:nth-child(3n) {
+            .section-header {
+                margin-left: 51%;
+
+                @media screen and (max-width: v.$mediacutoff) {
+                    margin: auto;
+                }
+            }
+        }
+        .card-section:nth-child(3n+1) {
+            .section-header {
+                margin-right: 51% ;
+
+                @media screen and (max-width: v.$mediacutoff) {
+                    margin: auto;
+                }
+            }
+        }
+    }
+
+
 }
 
 .card-section {
     display: flex;
-    margin: 50px;
-    flex-wrap: wrap;
+    flex-direction: column;
+    margin: v.$largespace;
+    flex-wrap: nowrap;
     justify-content: center;
     gap: 2rem;
 
-    @media screen and (max-width: 768px) {
+
+    @media screen and (max-width: v.$mediacutoff) {
         flex-direction: column;
         align-items: center;
     }
 
-    & .card {
-        @include m.rounded-corners;
-       // background-color: greenyellow;
-        width: 500px;
-        height: 350px;
-        perspective: 2000px;
-        
 
-        &:hover .card-content-container:hover {
-            transform: rotateY(180deg);
-        }
+    & .card-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2rem;
 
-        & .card-content-container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            text-align: center;
-            transition: transform 0.5s;
-            transform-style: preserve-3d;
+        & .card {
+            @include m.rounded-corners;
+            // background-color: greenyellow;
+            width: v.$basewidth;
+            height: calc(v.$basewidth * 0.7);
+            perspective: 2000px;
 
-            & .card-front {
-                @include m.dark-text;     
-                box-shadow: 0 0 5px v.$accentcolor2;           
 
-                
-                & .card-text-container {
-                    position: absolute;
-                    //width: 60%;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                    background-color: transparent;
-                }
-
-                
-
-            }
-
-            & .card-back {
-                background-color: dodgerblue;
-                color: white;
+            &:hover .card-content-container:hover {
                 transform: rotateY(180deg);
-                @include m.link;
-                
-                & .card-text-container {
-                    position: absolute;
-                    width: 80%;
-                    top: 50%;
-                    left: 50%;
-                    transform: translate(-50%, -50%);
-                }
-
             }
 
-            & .card-front,
-            .card-back {
-                @include m.rounded-corners;
-                position: absolute;
+            & .card-content-container {
+                position: relative;
                 width: 100%;
                 height: 100%;
-                -webkit-backface-visibility: hidden;
-                /* Safari */
-                backface-visibility: hidden;
+                text-align: center;
+                transition: transform 0.5s;
+                transform-style: preserve-3d;
+
+                & .card-front {
+                    @include m.dark-text;
+                    box-shadow: 0 0 5px v.$accentcolor2;
 
 
-                & img {
+                    & .card-text-container {
+                        position: absolute;
+                        //width: 60%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        background-color: transparent;
+                    }
+
+
+
+                }
+
+                & .card-back {
+                    background-color: dodgerblue;
+                    color: white;
+                    transform: rotateY(180deg);
+                    @include m.link;
+
+                    & .card-text-container {
+                        position: absolute;
+                        width: 80%;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                    }
+
+                }
+
+                & .card-front,
+                .card-back {
                     @include m.rounded-corners;
+                    position: absolute;
                     width: 100%;
                     height: 100%;
+                    -webkit-backface-visibility: hidden;
+                    /* Safari */
+                    backface-visibility: hidden;
+
+
+                    & img {
+                        @include m.rounded-corners;
+                        width: 100%;
+                        height: 100%;
+                    }
+
+                    h3 {
+                        margin-bottom: 0.8rem;
+                    }
+
+                    p {
+                        line-height: 1.5rem;
+                        margin: 0.5rem;
+                    }
+
                 }
-                h3{
-                    margin-bottom: 0.8rem;
-                }
-                p{
-                    line-height: 1.5rem;
-                    margin: 0.5rem;
-                }
-                
             }
         }
     }
