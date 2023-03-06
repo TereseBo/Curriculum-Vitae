@@ -15,11 +15,12 @@
 }
 .mainNav li:hover {
   background-color: rgb(48, 48, 68);
-  transform: scale(1.2);
+  transform: scale(1.1);
   transition: 0.5s;
+  box-shadow: 0 0 5px rgb(225, 255, 255);
 }
 .mainNav li:hover a {
-  color: rgb(0, 0, 20);
+  color: rgb(1, 1, 48);
   font-weight: 700;
 }
 .mainNav li a {
@@ -28,16 +29,17 @@
 }
 
 body {
-  margin-top: 3rem;
-  margin-bottom: 3rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   text-align: center;
-  background: rgb(54, 4, 78);
   color: rgb(115, 115, 129);
   font-size: medium;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: rgb(54, 4, 78);
+  background-size: 100%;
 }
 body header {
   display: flex;
@@ -130,12 +132,14 @@ body main .card-section:nth-child(3n+1) .section-header {
   background-color: transparent;
 }
 .card-section .card-container .card .card-content-container .card-back {
-  background-color: dodgerblue;
+  background-image: linear-gradient(15deg, rgb(255, 0, 221), rgb(115, 115, 129), rgb(1, 1, 48));
+  background-size: 100%;
   color: white;
   transform: rotateY(180deg);
+  box-shadow: 0 0 5px rgb(225, 255, 255);
 }
 .card-section .card-container .card .card-content-container .card-back a {
-  color: rgb(0, 0, 20);
+  color: rgb(1, 1, 48);
   text-decoration: none;
 }
 .card-section .card-container .card .card-content-container .card-back a:hover {

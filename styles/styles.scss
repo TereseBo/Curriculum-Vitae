@@ -6,16 +6,17 @@
 }
 
 body {
-    margin-top: v.$largespace;
-    margin-bottom: v.$largespace;
+    padding-top: v.$largespace;
+    padding-bottom: v.$largespace;
     text-align: center;
-    background: v.$primarycolor;
+   // background: v.$primarycolor;
     color: v.$tertiarycolor;
     font-size: medium;
     box-sizing: border-box;
     display:flex;
     flex-direction: column;
     align-items: center;
+    @include m.stripes;
 
     header{
         display: flex;
@@ -44,8 +45,6 @@ body {
         h2 {
 
             @include m.fancy-text;
-
-            // background-color: aqua;
         }
 
     }
@@ -99,7 +98,6 @@ body {
 
         & .card {
             @include m.rounded-corners;
-            // background-color: greenyellow;
             width: v.$basewidth;
             height: calc(v.$basewidth * 0.7);
             perspective: 2000px;
@@ -136,9 +134,10 @@ body {
                 }
 
                 & .card-back {
-                    background-color: dodgerblue;
+                    @include m.stripes2;
                     color: white;
                     transform: rotateY(180deg);
+                    box-shadow: 0 0 5px v.$accentcolor2;
                     @include m.link;
 
                     & .card-text-container {
