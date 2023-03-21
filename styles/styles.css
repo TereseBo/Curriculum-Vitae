@@ -139,12 +139,16 @@ body main .card-section:nth-child(3n+1) .section-header {
   box-shadow: 0 0 5px rgb(225, 255, 255);
 }
 .card-section .card-container .card .card-content-container .card-back a {
-  color: rgb(1, 1, 48);
+  color: white;
   text-decoration: none;
+  font-size: 1.2rem;
+  font-weight: 700;
 }
 .card-section .card-container .card .card-content-container .card-back a:hover {
-  text-shadow: 1px 1px rgb(0, 0, 0), 0 0 1rem rgb(255, 0, 221);
+  transition: 0.5s;
+  text-shadow: 1px 1px rgb(255, 0, 221), 0 0 1rem rgb(255, 0, 221);
   font-weight: bolder;
+  font-size: 1.5rem;
 }
 .card-section .card-container .card .card-content-container .card-back .card-text-container {
   position: absolute;
